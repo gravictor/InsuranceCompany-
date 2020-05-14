@@ -21,11 +21,15 @@ namespace FVerStoreApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Добавляем сервис валидатора пароля
+            services.AddTransient<IPasswordValidator<User>,
+                    CustomPasswordValidator>(serv => new CustomPasswordValidator(6));
+
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationContext>();
+                    .AddEntityFrameworkStores<ApplicationContext>();
 
             services.AddControllersWithViews();
         }
