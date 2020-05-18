@@ -1,3 +1,5 @@
+using FVerStoreApp.Interfaces;
+using FVerStoreApp.mocks;
 using FVerStoreApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +32,8 @@ namespace FVerStoreApp
 
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationContext>();
-
+            services.AddTransient<IAllInsurances, MockInsurances>();
+            services.AddTransient<IInsuranceCategory, MockCategory>();
             services.AddControllersWithViews();
         }
 
@@ -41,7 +44,7 @@ namespace FVerStoreApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            //app.UseMvcWithDefaultRoute();
             app.UseRouting();
 
             app.UseAuthentication();    // подключение аутентификации

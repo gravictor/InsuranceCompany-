@@ -1,0 +1,30 @@
+﻿@using FVerStoreApp.Models
+@model IEnumerable<Insurance>
+@{
+    ViewData["Title"] = "Виды страховок";
+}
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+    <h2>Все страховки</h2>
+    <div class="row mt-5 mb-2">
+        @{
+            foreach (var insurance in Model)
+            {
+                <div class="col-lg-4">
+                    <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name"/>
+                    <h2> @insurance.Name</h2>
+                    <p>@insurance.ShortDesc</p>
+                    <p>Цена: @insurance.Price.ToString("c")</p>
+                    <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>

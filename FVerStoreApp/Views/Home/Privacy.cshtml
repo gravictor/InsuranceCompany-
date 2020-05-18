@@ -1,6 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@using FVerStoreApp.Models
+@model IEnumerable<Insurance>
+@{
+    ViewData["Title"] = "Виды страховок";
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+    <h2>Все страховки</h2>
+    @{
+        foreach (var insurance in Model)
+        {
+            <div>
+                <h2>Модель: @insurance.Name</h2>
+                <p>Цена: @insurance.Price.ToString("c")</p>
+            </div>
+        }
+     }
+</body>
+</html>
