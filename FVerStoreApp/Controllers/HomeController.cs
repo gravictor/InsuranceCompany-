@@ -22,6 +22,10 @@ namespace FVerStoreApp.Controllers
         {
             return View();
         }
+        public IActionResult Area()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

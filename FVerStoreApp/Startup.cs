@@ -46,7 +46,6 @@ namespace FVerStoreApp
             app.UseStaticFiles();
             //app.UseMvcWithDefaultRoute();
             app.UseRouting();
-
             app.UseAuthentication();    // подключение аутентификации
             app.UseAuthorization();
 
