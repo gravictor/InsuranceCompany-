@@ -1,0 +1,39 @@
+﻿@model FVerStoreApp.ViewModels.OrderViewModel
+@{
+    ViewBag.Title = "Заказ";
+}
+    <form asp-action="Order" asp-controller="Insurances">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input type="text" asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Имя</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Year" class="control-label">Год рождения</label>
+            <input type="number" asp-for="Year" class="form-control" />
+        </div>
+        <div class="form-group">
+            {
+                <label asp-for="Insurancess" class="control-label">Страховка</label>
+                <input type="text" asp-for="Insurancess" class="form-control" />
+            }
+        </div>
+        <div class="form-group">
+            <label asp-for="MonthCount" class="control-label">Количество месяцев</label>
+            <input type="number" asp-for="MonthCount" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="price" class="control-label">Цена</label>
+            <input type="number" asp-for="price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Купить" class="btn btn-outline-secondary" />
+        </div>
+    </form>

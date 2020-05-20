@@ -9,19 +9,23 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-
     <h2>Все страховки</h2>
     <div class="row mt-5 mb-2">
         @{
+            int i = -1;
             foreach (var insurance in Model)
             {
+                i++;
                 <div class="col-lg-4">
-                    <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name"/>
+                    <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name" />
                     <h2> @insurance.Name</h2>
                     <p>@insurance.ShortDesc</p>
                     <p>Цена: @insurance.Price.ToString("c")</p>
-                    <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+                    <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post">
+                        <a class="btn btn-sm btn-primary" asp-action="Order" asp-route-id="@i" asp-route-email="@User.Identity.Name">купить</a>
+                    </form>
                 </div>
+                
             }
         }
     </div>

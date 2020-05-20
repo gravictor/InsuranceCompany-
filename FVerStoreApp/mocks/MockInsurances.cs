@@ -17,6 +17,7 @@ namespace FVerStoreApp.mocks
                 return new List<Insurance>
                 {
                     new Insurance{
+                        ID = 0,
                         Name="Формула здоровья",
                         ShortDesc ="Максимальная защита и финансовая поддержка во время лечения",
                         Image="/images/img1.jpg",
@@ -24,6 +25,8 @@ namespace FVerStoreApp.mocks
                         Category = _categoryInsurnce.AllCategories.First()
                     },
                     new Insurance{
+
+                        ID = 1,
                         Name="Оптимальная защита",
                         ShortDesc ="Классическая программа добровольной мед страховки",
                         Image="/images/img2.jpg",
@@ -31,6 +34,8 @@ namespace FVerStoreApp.mocks
                         Category = _categoryInsurnce.AllCategories.First()
                     },
                     new Insurance{
+
+                        ID = 2,
                         Name="Защита для ребенка",
                         ShortDesc ="Страховка на случай травм и других внезапных неприятностей.",
                         Image="/images/img3.jpg",
@@ -38,6 +43,8 @@ namespace FVerStoreApp.mocks
                         Category = _categoryInsurnce.AllCategories.First()
                     },
                     new Insurance{
+
+                        ID = 3,
                         Name="Автоцивилка",
                         ShortDesc ="Материальная защита Вашей ответсвенности, быстрая оплата пострадавшей стороне.",
                         Image="/images/img4.jpg",

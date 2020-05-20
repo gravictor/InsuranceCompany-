@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
-    @{
+@{
     ViewData["Title"] = "Личный кабинет";
-    }
-    @if (User.Identity.IsAuthenticated)
+}
+
+<p>Здравствуйте, @User.Identity.Name</p>
+@if (User.Identity.IsAuthenticated)
 {
-    if(@User.Identity.Name =="admin123@gmail.com")
+    if (@User.Identity.Name == "admin123@gmail.com")
     {
-    <a asp-controller="Roles" asp-action="Index">Управление пользователями</a>
+        <a asp-controller="Roles" asp-action="Index">Управление ролями пользователей</a>
+        <br />
+
+        <a asp-controller="Users" asp-action="Index">Изменение пользователей</a>
     }
-    <p>Здравствуйте, @User.Identity.Name</p>
+    <form asp-action="ChangePassword" asp-controller="PersonalCabinet" asp-route-email="@User.Identity.Name" method="post">
+        <br />
+        <a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-email="@User.Identity.Name">Изменить пароль</a>
+    </form>
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>

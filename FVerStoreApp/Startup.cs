@@ -35,6 +35,12 @@ namespace FVerStoreApp
             services.AddTransient<IAllInsurances, MockInsurances>();
             services.AddTransient<IInsuranceCategory, MockCategory>();
             services.AddControllersWithViews();
+
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // добавляем контекст MobileContext в качестве сервиса в приложение
+            services.AddDbContext<OrderContext>(options =>
+                options.UseSqlServer(connection));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
