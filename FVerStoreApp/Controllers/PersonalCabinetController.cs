@@ -19,6 +19,7 @@ namespace FVerStoreApp.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+        RegisterViewModel model;
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
         public async Task<IActionResult> ChangePassword(string Email)
