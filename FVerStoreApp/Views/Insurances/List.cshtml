@@ -1,6 +1,6 @@
 ﻿@using FVerStoreApp.Models
 @using FVerStoreApp.ViewModels
-@model IndexViewModel
+@model IEnumerable<Insurance>
 @{
     ViewData["Title"] = "Виды страховок";
 }
@@ -13,12 +13,8 @@
     <h2>Все страховки</h2>
     <div class="row mt-5 mb-2">
         @{
-<<<<<<< HEAD
             int i = -1;
             foreach (var insurance in Model)
-=======
-            foreach (var insurance in Model.insurances)
->>>>>>> a02e41552941033a07d9757e7c96386f37ec5f32
             {
                 i++;
                 <div class="col-lg-4">
@@ -26,13 +22,10 @@
                     <h2> @insurance.Name</h2>
                     <p>@insurance.ShortDesc</p>
                     <p>Цена: @insurance.Price.ToString("c")</p>
-<<<<<<< HEAD
-                    <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post">
+                    <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post"/>
                         <a class="btn btn-sm btn-primary" asp-action="Order" asp-route-id="@i" asp-route-email="@User.Identity.Name">купить</a>
-=======
                     <form method="post" asp-controller="Insurances" asp-route-id="Model.OrderModel.Id" asp-action="OrderInsurance">
                         <input type="submit" value="Купить" />
->>>>>>> a02e41552941033a07d9757e7c96386f37ec5f32
                     </form>
                 </div>
                 

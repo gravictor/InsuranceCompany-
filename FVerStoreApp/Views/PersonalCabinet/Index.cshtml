@@ -1,21 +1,17 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
-<<<<<<< HEAD
 @{
     ViewData["Title"] = "Личный кабинет";
 }
 
-<p>Здравствуйте, @User.Identity.Name</p>
 @if (User.Identity.IsAuthenticated)
-=======
-        @{
+{
+    <p>Здравствуйте, @User.Identity.Name</p>
     ViewData["Title"] = "Личный кабинет";
-        }
-        @if (User.Identity.IsAuthenticated)
->>>>>>> a02e41552941033a07d9757e7c96386f37ec5f32
+}
+@if (User.Identity.IsAuthenticated)
 {
     if (@User.Identity.Name == "admin123@gmail.com")
     {
-<<<<<<< HEAD
         <a asp-controller="Roles" asp-action="Index">Управление ролями пользователей</a>
         <br />
 
@@ -25,21 +21,16 @@
         <br />
         <a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-email="@User.Identity.Name">Изменить пароль</a>
     </form>
+    <br />
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>
-=======
-        <a asp-controller="Roles" asp-action="Index">Управление пользователями</a>
-    }
-        <p>Здравствуйте, @User.Identity.Name</p>
-        <form method="post" asp-controller="Account" asp-action="Logout">
-            <input type="submit" value="Выход" />
-        </form>
->>>>>>> a02e41552941033a07d9757e7c96386f37ec5f32
+    <a asp-controller="Roles" asp-action="Index">Управление пользователями</a>
+
 }
 else
 {
-        <a asp-controller="Account" asp-action="Login">Вход</a>
-        <a asp-controller="Account" asp-action="Register">Регистрация</a>
+<a asp-controller="Account" asp-action="Login">Вход</a>
+<a asp-controller="Account" asp-action="Register">Регистрация</a>
 }
 
