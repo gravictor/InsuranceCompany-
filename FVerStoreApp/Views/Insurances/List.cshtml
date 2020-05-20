@@ -1,5 +1,6 @@
 ﻿@using FVerStoreApp.Models
-@model IEnumerable<Insurance>
+@using FVerStoreApp.ViewModels
+@model IndexViewModel
 @{
     ViewData["Title"] = "Виды страховок";
 }
@@ -13,14 +14,16 @@
     <h2>Все страховки</h2>
     <div class="row mt-5 mb-2">
         @{
-            foreach (var insurance in Model)
+            foreach (var insurance in Model.insurances)
             {
                 <div class="col-lg-4">
-                    <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name"/>
+                    <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name" />
                     <h2> @insurance.Name</h2>
                     <p>@insurance.ShortDesc</p>
                     <p>Цена: @insurance.Price.ToString("c")</p>
-                    <p><a class="btn btn-warning" href="#">Подробнее</a></p>
+                    <form method="post" asp-controller="Insurances" asp-route-id="Model.OrderModel.Id" asp-action="OrderInsurance">
+                        <input type="submit" value="Купить" />
+                    </form>
                 </div>
             }
         }
