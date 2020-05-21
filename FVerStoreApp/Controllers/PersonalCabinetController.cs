@@ -6,6 +6,7 @@ using FVerStoreApp.Models;
 using FVerStoreApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace FVerStoreApp.Controllers
@@ -14,10 +15,13 @@ namespace FVerStoreApp.Controllers
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<User> _userManager;
-        public PersonalCabinetController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
+        private OrderContext db;
+
+        public PersonalCabinetController(OrderContext context, RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            db = context;
         }
         RegisterViewModel model;
         public IActionResult Index() => View(_roleManager.Roles.ToList());
@@ -31,6 +35,12 @@ namespace FVerStoreApp.Controllers
             }
             ChangePasswordViewModel model = new ChangePasswordViewModel { Id = user.Id, Email = user.Email };
             return View(model);
+
+        }
+        public IActionResult MyInsuranes()
+        {
+            var data = db.orders.AsNoTracking().ToList();
+            return View(data);
         }
     }
 }

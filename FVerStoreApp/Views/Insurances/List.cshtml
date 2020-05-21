@@ -21,12 +21,13 @@
                     <img class="img-thumbnail" src="@insurance.Image" alt="@insurance.Name" />
                     <h2> @insurance.Name</h2>
                     <p>@insurance.ShortDesc</p>
-                    <p>Цена: @insurance.Price.ToString("c")</p>
-                    <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post"/>
+                    <p>Цена: @insurance.Price грн</p>
+                    @if (User.Identity.IsAuthenticated)
+                     {
+                        <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post" />
                         <a class="btn btn-sm btn-primary" asp-action="Order" asp-route-id="@i" asp-route-email="@User.Identity.Name">купить</a>
-                    <form method="post" asp-controller="Insurances" asp-route-id="Model.OrderModel.Id" asp-action="OrderInsurance">
-                        <input type="submit" value="Купить" />
-                    </form>
+                     }
+
                 </div>
                 
             }

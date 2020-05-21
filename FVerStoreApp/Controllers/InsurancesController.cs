@@ -32,7 +32,7 @@ namespace FVerStoreApp.Controllers
             {
                 return NotFound();
             }
-            OrderViewModel model = new OrderViewModel { Id = user.Id, Name=user.Name, Email = user.Email, Year = user.Year, Insurancess = list[Convert.ToInt32(id)].Name};
+            OrderViewModel model = new OrderViewModel { Id = user.Id, Name=user.Name, Email = user.Email, Year = user.Year, Insurancess = list[Convert.ToInt32(id)].Name, price = list[Convert.ToInt32(id)].Price };
 
             return View(model);
         }
@@ -40,7 +40,6 @@ namespace FVerStoreApp.Controllers
         public IActionResult Order(OrderViewModel Orders)
         {
             db.orders.Add(Orders);
-            db.Database.EnsureCreated();
             db.SaveChanges();
             return View();
         }

@@ -22,15 +22,16 @@
         <a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-email="@User.Identity.Name">Изменить пароль</a>
     </form>
     <br />
+    <form method="post" asp-controller="PersonalCabinet" asp-action="MyInsuranes">
+        <input type="submit" value="Мои покупки" />
+    </form>
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Выход" />
     </form>
-    <a asp-controller="Roles" asp-action="Index">Управление пользователями</a>
-
 }
 else
 {
-<a asp-controller="Account" asp-action="Login">Вход</a>
-<a asp-controller="Account" asp-action="Register">Регистрация</a>
+    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Register">Регистрация</a>
 }
 
