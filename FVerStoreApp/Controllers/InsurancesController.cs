@@ -43,25 +43,18 @@ namespace FVerStoreApp.Controllers
             db.SaveChanges();
             return View();
         }
-        public async Task<IActionResult> OrderInsurance(string id)
+        public IActionResult OrderInsurance()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                User user = await _userManager.FindByIdAsync(id);
-
-                if (user == null)
-                {
-                    return NotFound();
-                }
-                OrderModel model = new OrderModel { Id = user.Id, Name = user.Name, Age = Convert.ToInt32(2020 - user.Year).ToString(), Email = user.Email };
-                return View(model);
-            }
             return View();
         }
         public ViewResult List()
         {
             var insurances = _allInsurances.Insurances;
             return View(insurances);
+        }
+        public IActionResult GetPayout()
+        {
+            return View();
         }
     }
 }

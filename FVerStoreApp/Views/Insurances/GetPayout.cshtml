@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetPayout</title>
+</head>
+<body>
+    <h2>Напишите нам</h2>
+    <h4>Опишите причину со своей почты: @User.Identity.Name</h4>
+    <h4>Наша почта insurtopcompany@gmail.com</h4>
+    <div class="form-group">
+        <label class="control-label">Карта для выплаты</label>
+        <input type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Желаемая сумма</label>
+        <input type="number" class="form-control" />
+    </div>
+    <form method="post" asp-controller="PersonalCabinet" asp-action="Index">
+        <input type="submit" value="Отправить заявку" />
+    </form>
+    <br />
+    <br />
+    <h3>После осмотрения заявки вы получите ответ на почту!</h3>
+</body>
+</html>

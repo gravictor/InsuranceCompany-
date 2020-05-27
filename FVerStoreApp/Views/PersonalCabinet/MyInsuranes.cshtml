@@ -10,19 +10,19 @@
 </head>
 <body>
     <h2>Мои страховки</h2>
-
     @foreach (var insurance in Model)
     {
         if (insurance.Email == User.Identity.Name)
         {
+           
             <div class="row mt-5 mb-2">
 
                 <div class="col-lg-4">
-                    <h3> @insurance.Insurancess</h3>
-                    <p>Цена за месяц: @insurance.price грн</p>
+                    <h3>@insurance.Insurancess</h3>
                     <p>Цена: @Convert.ToInt32(insurance.price * insurance.MonthCount) грн</p>
+                    <p>Цена за месяц: @insurance.price грн</p>
                     <p>Количество месяцев: @insurance.MonthCount</p>
-                    <form method="post" asp-controller="Insurances">
+                    <form method="post" asp-controller="Insurances" asp-action="GetPayout">
                         <input type="submit" value="Получить выплату" />
                     </form>
                 </div>
