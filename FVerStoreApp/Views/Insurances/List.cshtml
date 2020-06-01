@@ -25,7 +25,7 @@
                     @if (User.Identity.IsAuthenticated)
                      {
                         <form asp-action="Order" asp-controller="Insurances" asp-route-id="@i" asp-route-email="@User.Identity.Name" method="post" />
-                        <a class="btn btn-sm btn-primary" asp-action="Order" asp-route-id="@i" asp-route-email="@User.Identity.Name">купить</a>
+                        <a class="btn btn-sm btn-primary" asp-action="Order" asp-route-id="@i" asp-route-email="@User.Identity.Name">Купити</a>
                      }
 
                 </div>
