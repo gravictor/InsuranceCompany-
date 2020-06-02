@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<FVerStoreApp.Models.User>
 
-<h2>Список пользователей</h2>
+<h2>Список користувачів</h2>
 <table class="table">
     @foreach (var user in Model)
     {
         <tr>
             <td>@user.Email</td>
             <td>
-                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id">Права доступа</a>
+                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id">Права доступу</a>
             </td>
         </tr>
     }
 </table>
-<a asp-controller="Roles" asp-action="Index">назад</a>
+<a asp-controller="Roles" asp-action="Index">Назад</a>

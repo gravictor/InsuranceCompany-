@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<FVerStoreApp.ViewModels.OrderViewModel>
 
 @{
-    ViewData["Title"] = "Мои страховки";
+    ViewData["Title"] = "Мої страховки";
 }
 <html>
 
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    <h2>Мои страховки</h2>
+    <h2>Мої страховки</h2>
     @foreach (var insurance in Model)
     {
         if (insurance.Email == User.Identity.Name)
@@ -19,11 +19,11 @@
 
                 <div class="col-lg-4">
                     <h3>@insurance.Insurancess</h3>
-                    <p>Цена: @Convert.ToInt32(insurance.price * insurance.MonthCount) грн</p>
-                    <p>Цена за месяц: @insurance.price грн</p>
-                    <p>Количество месяцев: @insurance.MonthCount</p>
+                    <p>Ціна: @Convert.ToInt32(insurance.price * insurance.MonthCount) грн</p>
+                    <p>Ціна за місяць: @insurance.price грн</p>
+                    <p>кількість місяців: @insurance.MonthCount</p>
                     <form method="post" asp-controller="Insurances" asp-action="GetPayout">
-                        <input type="submit" value="Получить выплату" />
+                        <input type="submit" value="Отримати виплату" />
                     </form>
                 </div>
                 

@@ -1,37 +1,37 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
 @{
-    ViewData["Title"] = "Личный кабинет";
+    ViewData["Title"] = "Особистий кабінет";
 }
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p>Здравствуйте, @User.Identity.Name</p>
-    ViewData["Title"] = "Личный кабинет";
+    <p>Вітаю, @User.Identity.Name</p>
+    ViewData["Title"] = "Особистий кабінет";
 }
 @if (User.Identity.IsAuthenticated)
 {
     if (@User.Identity.Name == "admin123@gmail.com")
     {
-        <a asp-controller="Roles" asp-action="Index">Управление ролями пользователей</a>
+        <a asp-controller="Roles" asp-action="Index">Управління ролями користувачів</a>
         <br />
 
-        <a asp-controller="Users" asp-action="Index">Изменение пользователей</a>
+        <a asp-controller="Users" asp-action="Index">Редагування користувачів</a>
     }
     <form asp-action="ChangePassword" asp-controller="PersonalCabinet" asp-route-email="@User.Identity.Name" method="post">
         <br />
-        <a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-email="@User.Identity.Name">Изменить пароль</a>
+        <a class="btn btn-sm btn-primary" asp-action="ChangePassword" asp-route-email="@User.Identity.Name">Змінити пароль</a>
     </form>
     <br />
     <form method="post" asp-controller="PersonalCabinet" asp-action="MyInsuranes">
-        <input type="submit" value="Мои покупки" />
+        <input type="submit" value="Мої замовлення" />
     </form>
     <form method="post" asp-controller="Account" asp-action="Logout">
-        <input type="submit" value="Выход" />
+        <input type="submit" value="Вихід" />
     </form>
 }
 else
 {
-    <a asp-controller="Account" asp-action="Login">Вход</a>
-    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+    <a asp-controller="Account" asp-action="Login">Вхід</a>
+    <a asp-controller="Account" asp-action="Register">Регістрація</a>
 }
 

@@ -14,8 +14,8 @@ namespace FVerStoreApp.mocks
             {
                 return new List<Category>
                 {
-                    new Category{categoryName = "Медицинские", Desc="Гарантия того, что в случае болезни вы получаете мед помощь"},
-                    new Category{categoryName = "Автомобильные", Desc="Защита от непредвиденных ситуаций на дороге"}
+                    new Category{categoryName = "Медичні", Desc="Гарантія того, що у випадку захворювання ви отримуєте медичну допомогу"},
+                    new Category{categoryName = "Автомобільні", Desc="Захист від непередбачених випадкыв на дорозі"}
                 };
             }
         }

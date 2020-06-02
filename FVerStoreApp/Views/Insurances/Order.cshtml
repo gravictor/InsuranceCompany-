@@ -1,6 +1,6 @@
 ﻿@model FVerStoreApp.ViewModels.OrderViewModel
 @{
-    ViewBag.Title = "Заказ";
+    ViewBag.Title = "Замовлення";
 }
     <form asp-action="Order" asp-controller="Insurances">
         <div asp-validation-summary="All" class="text-danger"></div>
@@ -12,11 +12,11 @@
             <input type="text" asp-for="Email" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Name" class="control-label">Имя</label>
+            <label asp-for="Name" class="control-label">Им'я</label>
             <input type="text" asp-for="Name" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Year" class="control-label">Год рождения</label>
+            <label asp-for="Year" class="control-label">Рок народження</label>
             <input type="number" asp-for="Year" class="form-control" />
         </div>
         <div class="form-group">
@@ -24,14 +24,14 @@
              <input type="text" asp-for="Insurancess" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="MonthCount" class="control-label">Количество месяцев</label>
+            <label asp-for="MonthCount" class="control-label">Кількість місяців</label>
             <input type="number" asp-for="MonthCount" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="price" class="control-label">Цена</label>
+            <label asp-for="price" class="control-label">Ціна</label>
             <input type="number" asp-for="price" class="form-control" />
         </div>
         <div class="form-group">
-            <input type="submit" value="Купить" class="btn btn-outline-secondary" />
+            <input type="submit" value="Купити" class="btn btn-outline-secondary" />
         </div>
     </form>
