@@ -18,10 +18,24 @@
         <label asp-for="RememberMe"></label><br />
         <input asp-for="RememberMe" />
     </div>
-    <div>
-        <input type="submit" value="Війти" />
+    <div class="button">
+            <input type="submit" value="Війти" class="input" />
     </div>
-    <div>
-        <input type="submit" asp-controller="Account" asp-action="Register" value="Регістрація"/>
+    <div class="button">
+        <input type="submit" asp-controller="Account" asp-action="Register" value="Регістрація" class="input"/>
     </div>
 </form>
+<style>
+    .button
+    {
+        width: 200px;
+        height: 30px;
+        background-color:aquamarine;
+        
+    }
+    .input
+    {
+        border: none;
+        background: none;
+    }
+</style>

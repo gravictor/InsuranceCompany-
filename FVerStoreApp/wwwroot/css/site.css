@@ -53,13 +53,13 @@ button.accept-policy {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
+  /* Margin bottom by footer height 
   margin-bottom: 60px;
 }
 .footer {
@@ -67,69 +67,7 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
+  line-height: 60px;  Vertically center the text there 
+}*/
 
 
-.wrapper {
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
-.startscreen {
-    height: 100vh;
-    background: no-repeat center;
-    background-color: crimson;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.startscreen__title {
-    font-family: Merriweather, sans-serif;
-    font-weight: bold;
-    text-align: center;
-    text-decoration-line: underline;
-    font-size: 48px;
-    line-height: 66px;
-    color: #fff;
-}
-
-.startscreen__buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.startscreen__but1, .startscreen__but2 {
-    margin-top: 100px;
-    padding: 19px 19px;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 25px;
-}
-
-.startscreen__but1 {
-    margin-right: 30px;
-    color: #fff;
-    background-color: #77BC82;
-    border: none;
-}
-
-    .startscreen__but1:hover, .startscreen__but1:focus, .startscreen__but1:active {
-        background: #426848;
-        border: 5px solid #77BC82;
-    }
-
-.startscreen__but2 {
-    color: #fff;
-    background: none;
-    border: 3px solid #fff;
-}
-
-    .startscreen__but2:hover, .startscreen__but2:focus, .startscreen__but2:active {
-        background: rgb(255,255,255,0.3);
-        border: 5px solid #fff;
-    }
